@@ -2,6 +2,6 @@
 Ein Repository in der alle notwendigen Dateien für die Ampelsteuerung enthalten sind
 
 
-##Bedienung
+## Bedienung
 Wenn nur der Schalter -S1 betätigt wird, wird die normale Ampelsteuerung ausgeführt.
 Wenn nur der Schalter -S2 betätigt wird, wird die Ausnahme der Ampelsteuerung ausgeführt.
