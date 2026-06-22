@@ -4,5 +4,5 @@ nodes:
   displayname: Controller-trafficlight
   description: WAGO 0751-9301 Compact Controller 100
   engine: CC100
-  src: src
+  src: exercise2_maintenance_mode
   imageVersion: cc100-latest
