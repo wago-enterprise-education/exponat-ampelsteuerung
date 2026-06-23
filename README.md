@@ -1,12 +1,17 @@
-# exponat-ampelsteuerung
-Ein Repository in der alle notwendigen Dateien für die Ampelsteuerung enthalten sind
+# Ampelsteuerung
 
-## 3D-Teile
-In dem Ordner <a href="3D-Parts/">3D-Parts</a> sind die 3D Elemente von den Ampeln enthalten. Diese sind einmal in Vorder- und Rückseite aufgeteilt.
+Implementierung einer automatischen Ampelsteuerung mit dem WAGO-Controller, inklusive 3D-Design , SPS-Code und interaktiven Python-Übungen.
 
-## Source
-In dem Ordner <a href="src/">src</a> befindet sich ein unter Codesys V3.5 lauffähiges <a href="src/Ampel.projectarchive">Programm</a> der Ampelsteuerung.
+## 📋 Projektstruktur
 
-## Bedienung
-- Wenn nur der Schalter -S1 betätigt wird, wird die normale Ampelsteuerung ausgeführt
-- Wenn nur der Schalter -S2 betätigt wird, wird die Ausnahme der Ampelsteuerung ausgeführt
+- **[3D-Parts/](3D-Parts/)** – CAD-Dateien für das Ampel-Gehäuse (OpenSCAD)
+- **[src/codesys3/](src/codesys3/)** – IEC-61131-3 Steuerungscode für WAGO-Controller
+- **[src/python/](src/python/)** – Python-Implementierungen und Lernübungen
+  - **demo/** – Funktionierende Demo mit State Machine
+  - **exercise1_io_mapping/** – Übung: Ein-/Ausgänge zuordnen
+  - **exercise2_maintenance_mode/** – Übung: Wartungsmodus implementieren
+  - **solutions/** – Lösungsbeispiele
+
+## 📄 Lizenz
+
+[MIT License](LICENSE) – Copyright (c) 2026 WAGO GmbH & Co. KG - Education
