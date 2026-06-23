@@ -5,6 +5,10 @@ url: https://wago-enterprise-education.github.io/exponat-ampelsteuerung/
 lang: de
 remote_theme: wago-enterprise-education/wago-github-pages-theme
 plugins:
-- jemoji
-- jekyll-redirect-from
-- jekyll-relative-links
+  - jemoji
+  - jekyll-redirect-from
+  - jekyll-relative-links
+  - jekyll-mermaid
+
+mermaid:
+  src: 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js'
