@@ -1,0 +1,98 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Python virtual environments
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Python IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Python testing
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# CodesyS
+*.projectarchive
+*.project
+*.library
+*.exported
+*.object
+*.device
+*.version
+*.compiled
+*.compileinfo
+*.compileconfig
+
+# CodesyS temporary files
+.codesysroot/
+.codesys/
+.csproj.user
+codesysbuild/
+
+# Build outputs
+*.bin
+*.o
+*.a
+
+# OS-specific files
+Thumbs.db
+.DS_Store
+*.lnk
+
+# Backup files
+*.bak
+*.backup
+*.tmp
+*.swp
+*.swo
+*~
+
+# IDE and editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.classpath
+.project
+.pydevproject
+.settings/
