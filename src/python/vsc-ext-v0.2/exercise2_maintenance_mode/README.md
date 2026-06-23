@@ -23,8 +23,8 @@ Der Wartungsmodus wird durch das Drücken von Schalter S2 aktiviert. In diesem M
 stateDiagram-v2
     [*] --> Wartungsmodus_GelbAn: S2 gedrückt
     
-    Wartungsmodus_GelbAn: Hauptstraße: Gelb<br/>Nebenstraße: Gelb
-    Wartungsmodus_Aus: Hauptstraße: Aus<br/>Nebenstraße: Aus
+    Wartungsmodus_GelbAn: Hauptstraße: 🟡<br/>Nebenstraße: 🟡
+    Wartungsmodus_Aus: Hauptstraße: ⚫<br/>Nebenstraße: ⚫
     
     Wartungsmodus_GelbAn --> Wartungsmodus_Aus: 500ms
     Wartungsmodus_Aus --> Wartungsmodus_GelbAn: 500ms
@@ -40,9 +40,9 @@ stateDiagram-v2
     [*] --> Normalbetrieb
     
     Normalbetrieb: Normalbetrieb<br/>(Zyklus läuft)
-    Wartungsmodus: Wartungsmodus<br/>(Blinken Gelb)
-    AllRed_N2M: Hauptstraße: Rot<br/>Nebenstraße: Rot
-    AllRed_M2N: Hauptstraße: Rot<br/>Nebenstraße: Rot
+    Wartungsmodus: Wartungsmodus<br/>(Blinken 🟡)
+    AllRed_N2M: Hauptstraße: 🔴<br/>Nebenstraße: 🔴
+    AllRed_M2N: Hauptstraße: 🔴<br/>Nebenstraße: 🔴
     
     Normalbetrieb --> AllRed_N2M: S2 gedrückt<br/>(Zyklus-Ende)
     AllRed_N2M --> Wartungsmodus: 1200ms
