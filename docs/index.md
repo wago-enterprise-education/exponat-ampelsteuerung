@@ -50,8 +50,6 @@ Das Projekt nutzt die [`CC100IO`](https://github.com/wago-enterprise-education/w
 
 Die klassische (verkehrsunabhängige) Ampel folgt einem einfachen Muster:
 
-### Standard-Betrieb (Schalter `S1`)
-
 ```mermaid
 stateDiagram-v2
     [*] --> Rot
@@ -71,10 +69,6 @@ stateDiagram-v2
 
 Eine Ampelanlage besteht dabei aus zwei Ampeln: einer für die Hauptstraße und einer für die Nebenstraße. Die Ampeln wechseln sich ab, sodass immer nur eine Straße grün hat, während die andere rot ist.
 Zu beachten ist, dass eine Ampelanlage in der Realität oft durch Sensoren gesteuert wird, um den Verkehr zu optimieren. In diesem Exponat wird jedoch ein fester Zyklus verwendet, um die Programmierung und Logik zu demonstrieren.
-
-### Wartungsmodus (Schalter `S2`)
-
-Bei Aktivierung des Wartungsmodus blinkt die Ampel gelb – zum Beispiel bei Wartungsarbeiten oder Störungen.
 
 ---
 
@@ -107,7 +101,7 @@ src/python/vsc-ext-v0.2/
 ### Schritt 3: Demo ansehen oder Aufgaben lösen
 
 - [**Demo**](#-demo): Schauen Sie sich die funktionierende Implementierung an
-- [**Übungen**](#️-aufgaben): Lösen Sie die Aufgaben schrittweise
+- [**Aufgaben**](#️-aufgaben): Lösen Sie die Aufgaben schrittweise
 
 ### Schritt 4: Am Controller testen
 
@@ -119,9 +113,17 @@ Nutzen Sie die Extension, um Ihren Code direkt auf dem WAGO Controller auszufüh
 
 Die fertig implementierte Demo finden Sie hier:
 
-📁 [Demo-Programm und Dokumentation](../src/python/vsc-ext-v0.2/demo/Statemachine.md)
+📁 [Demo-Programm und Dokumentation](../src/python/vsc-ext-v0.2/demo)
 
 In der Demo sehen Sie ein komplettes, funktionierendes Beispiel mit State Machine für die Ampelsteuerung.
+
+### Standard-Betrieb (Schalter `S1`)
+
+Im Standardbetrieb läuft die Ampel in einem festen Zyklus, der die Haupt- und Nebenstraße abwechselnd grün schaltet, siehe [Ampelsteuerung](#-die-ampelsteuerung).
+
+### Wartungsmodus (Schalter `S2`)
+
+Bei Aktivierung des Wartungsmodus blinkt die Ampel gelb – zum Beispiel bei Wartungsarbeiten oder Störungen.
 
 ---
 
@@ -129,11 +131,11 @@ In der Demo sehen Sie ein komplettes, funktionierendes Beispiel mit State Machin
 
 Detaillierte Anleitung zu den einzelnen Aufgaben finden Sie hier:
 
-### [Aufgabe 1: IO-Mapping](../src/python/vsc-ext-v0.2/exercise1_io_mapping/README.md)
+### [Aufgabe 1: IO-Mapping](../src/python/vsc-ext-v0.2/exercise1_io_mapping)
 
 **Ziel**: Verstehen Sie, wie Eingänge und Ausgänge auf dem Controller konfiguriert werden. Ordnen Sie die Ampellichter den korrekten Ausgängen zu.
 
-### [Aufgabe 2: Wartungsmodus](../src/python/vsc-ext-v0.2/exercise2_maintenance_mode/README.md)
+### [Aufgabe 2: Wartungsmodus](../src/python/vsc-ext-v0.2/exercise2_maintenance_mode)
 
 **Ziel**: Implementieren Sie zusätzliche Funktionalität. Wenn Schalter `S2` gedrückt wird, soll die Ampel gelb blinken.
 
@@ -141,7 +143,7 @@ Detaillierte Anleitung zu den einzelnen Aufgaben finden Sie hier:
 
 ## 🔗 Ressourcen
 
-- 📚 [Pythonprojekt Übersicht](../src/python/README.md)
+- 📚 [Pythonprojekt Übersicht](../src/python)
 - 🐍 [`CC100IO` Python Bibliothek](https://github.com/wago-enterprise-education/wago_cc100_python)
 - 🏭 [WAGO GmbH & Co. KG](https://www.wago.com)
 - 💻 [WAGO CC100 Extension](https://marketplace.visualstudio.com/items?itemName=WAGO-education.vscode-wago-cc100)
