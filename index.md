@@ -113,7 +113,7 @@ Nutzen Sie die Extension, um Ihren Code direkt auf dem WAGO Controller auszufüh
 
 Die fertig implementierte Demo finden Sie hier:
 
-📁 [Demo-Programm und Dokumentation](/src/python/vsc-ext-v0.2/demo)
+📁 [Demo-Programm und Dokumentation](src/python/vsc-ext-v0.2/demo)
 
 In der Demo sehen Sie ein komplettes, funktionierendes Beispiel mit State Machine für die Ampelsteuerung.
 
@@ -131,11 +131,11 @@ Bei Aktivierung des Wartungsmodus blinkt die Ampel gelb – zum Beispiel bei War
 
 Detaillierte Anleitung zu den einzelnen Aufgaben finden Sie hier:
 
-### [Aufgabe 1: IO-Mapping](/src/python/vsc-ext-v0.2/exercise1_io_mapping)
+### [Aufgabe 1: IO-Mapping](src/python/vsc-ext-v0.2/exercise1_io_mapping)
 
 **Ziel**: Verstehen Sie, wie Eingänge und Ausgänge auf dem Controller konfiguriert werden. Ordnen Sie die Ampellichter den korrekten Ausgängen zu.
 
-### [Aufgabe 2: Wartungsmodus](/src/python/vsc-ext-v0.2/exercise2_maintenance_mode)
+### [Aufgabe 2: Wartungsmodus](src/python/vsc-ext-v0.2/exercise2_maintenance_mode)
 
 **Ziel**: Implementieren Sie zusätzliche Funktionalität. Wenn Schalter `S2` gedrückt wird, soll die Ampel gelb blinken.
 
@@ -143,7 +143,7 @@ Detaillierte Anleitung zu den einzelnen Aufgaben finden Sie hier:
 
 ## 🔗 Ressourcen
 
-- 📚 [Pythonprojekt Übersicht](/src/python)
+- 📚 [Pythonprojekt Übersicht](src/python)
 - 🐍 [`CC100IO` Python Bibliothek](https://github.com/wago-enterprise-education/wago_cc100_python)
 - 🏭 [WAGO GmbH & Co. KG](https://www.wago.com)
 - 💻 [WAGO CC100 Extension](https://marketplace.visualstudio.com/items?itemName=WAGO-education.vscode-wago-cc100)
