@@ -3,7 +3,7 @@ description: Dokumentation und Aufgaben für das Exponat Ampelsteuerung
 author: Maik Rehburg - WAGO GmbH & Co. KG
 url: https://wago-enterprise-education.github.io/exponat-ampelsteuerung/
 lang: de
-remote_theme: wago-enterprise-education/wago-github-pages-theme@feature/mermaid-support
+remote_theme: wago-enterprise-education/wago-github-pages-theme
 plugins:
   - jemoji
   - jekyll-redirect-from
