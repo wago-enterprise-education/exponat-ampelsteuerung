@@ -6,7 +6,6 @@ Python-Implementierungen der Ampelsteuerung für den WAGO CC100 Controller, mit 
 
 ### Voraussetzungen
 
-- Python 3.8+
 - WAGO-Controller mit Ampel-Hardware
 - VS Code mit [WAGO CC100 Extension v0.2.x](https://marketplace.visualstudio.com/items?itemName=WAGO-education.vscode-wago-cc100)
 
@@ -14,20 +13,20 @@ Python-Implementierungen der Ampelsteuerung für den WAGO CC100 Controller, mit 
 
 Das Projekt `vsc-ext-v0.2/` ist vollständig mit der WAGO CC100 Extension kompatibel:
 
-1. Extension in VS Code installieren
-2. Projekt öffnen: `vsc-ext-v0.2/`
-3. Projekt über die Extension ausführen
+1. [WAGO CC100 Extension](https://marketplace.visualstudio.com/items?itemName=WAGO-education.vscode-wago-cc100) in VS Code installieren
+2. Projekt-Verzeichnis `vsc-ext-v0.2/` in VS Code öffnen
+3. WAGO CC100 Extension im Verzeichnis öffnen
+4. Gewünschtes Python-Projekt (Demo oder Aufgaben) dem Controller zuweisen
+5. Projekt über die Extension auf Controller laden und starten
 
 ## Projektstruktur
 
-### `vsc-ext-v0.2/`
-
-WAGO CC100 Extension kompatibles Projekt mit:
+WAGO CC100 Extension kompatibles Projekt `vsc-ext-v0.2/` mit:
 
 - **demo/** – Vollständige funktionierende Demo mit State Machine
   - [`main.py`](vsc-ext-v0.2/demo/main.py) – Hauptprogramm
   - [`trafficlight.py`](vsc-ext-v0.2/demo/trafficlight.py) – Ampel-Logik
-  - [Statemachine.md](vsc-ext-v0.2/demo/Statemachine.md) – Dokumentation
+  - [README.md](vsc-ext-v0.2/demo/README.md) – Dokumentation
 
 - **exercise1_io_mapping/** – Übung: Ein-/Ausgänge konfigurieren
   - [README.md](vsc-ext-v0.2/exercise1_io_mapping/README.md) – Aufgabenbeschreibung
