@@ -4,7 +4,7 @@ Implementierung einer automatischen Ampelsteuerung mit dem WAGO-Controller, inkl
 
 ## 📋 Projektstruktur
 
-- **[3D-Parts/](3D-Parts/)** – CAD-Dateien für das Ampel-Gehäuse (OpenSCAD)
+- **[cad/](cad/)** – CAD-Dateien für das Ampel-Gehäuse (OpenSCAD)
 - **[src/codesys3/](src/codesys3/)** – IEC-61131-3 Steuerungscode für WAGO-Controller
 - **[src/python/](src/python/)** – Python-Implementierungen und Lernübungen
   - **demo/** – Funktionierende Demo mit State Machine
