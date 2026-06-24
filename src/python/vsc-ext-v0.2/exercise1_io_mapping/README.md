@@ -26,28 +26,28 @@ Dabei werden die Ausgänge des CC100 direkt angesteuert. Die Funktion `apply_sta
 stateDiagram-v2
     [*] --> AllRot1
     
-    AllRot1: Hauptstraße: 🔴<br/>Nebenstraße: 🔴
+    AllRot1: Hauptstraße - 🔴<br/>Nebenstraße - 🔴
     AllRot1 --> HauptRotGelb: 1200ms
     
-    HauptRotGelb: Hauptstraße: 🔴🟡<br/>Nebenstraße: 🔴
+    HauptRotGelb: Hauptstraße - 🔴🟡<br/>Nebenstraße - 🔴
     HauptRotGelb --> HauptGrün: 1200ms
     
-    HauptGrün: Hauptstraße: 🟢<br/>Nebenstraße: 🔴
+    HauptGrün: Hauptstraße - 🟢<br/>Nebenstraße - 🔴
     HauptGrün --> HauptGelb: 8500ms
     
-    HauptGelb: Hauptstraße: 🟡<br/>Nebenstraße: 🔴
+    HauptGelb: Hauptstraße - 🟡<br/>Nebenstraße - 🔴
     HauptGelb --> AllRot2: 1800ms
     
-    AllRot2: Hauptstraße: 🔴<br/>Nebenstraße: 🔴
+    AllRot2: Hauptstraße - 🔴<br/>Nebenstraße - 🔴
     AllRot2 --> NebenRotGelb: 1200ms
     
-    NebenRotGelb: Hauptstraße: 🔴<br/>Nebenstraße: 🔴🟡
+    NebenRotGelb: Hauptstraße - 🔴<br/>Nebenstraße - 🔴🟡
     NebenRotGelb --> NebenGrün: 1200ms
     
-    NebenGrün: Hauptstraße: 🔴<br/>Nebenstraße: 🟢
+    NebenGrün: Hauptstraße - 🔴<br/>Nebenstraße - 🟢
     NebenGrün --> NebenGelb: 8500ms
     
-    NebenGelb: Hauptstraße: 🔴<br/>Nebenstraße: 🟡
+    NebenGelb: Hauptstraße - 🔴<br/>Nebenstraße - 🟡
     NebenGelb --> AllRot1: 1800ms
 ```
 

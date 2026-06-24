@@ -21,10 +21,10 @@ Der Wartungsmodus soll durch das Drücken von Schalter `S2` aktiviert werden. In
 
 ```mermaid
 stateDiagram-v2
-    [*] --> Wartungsmodus_GelbAn: `S2` gedrückt
+   [*] --> Wartungsmodus_GelbAn: S2 gedrückt
     
-    Wartungsmodus_GelbAn: Hauptstraße: 🟡<br/>Nebenstraße: 🟡
-    Wartungsmodus_Aus: Hauptstraße: ⚫<br/>Nebenstraße: ⚫
+   Wartungsmodus_GelbAn: Hauptstraße - 🟡<br/>Nebenstraße - 🟡
+   Wartungsmodus_Aus: Hauptstraße - ⚫<br/>Nebenstraße - ⚫
     
     Wartungsmodus_GelbAn --> Wartungsmodus_Aus: 500ms
     Wartungsmodus_Aus --> Wartungsmodus_GelbAn: 500ms
@@ -41,13 +41,13 @@ stateDiagram-v2
     
     Normalbetrieb: Normalbetrieb<br/>(Zyklus läuft)
     Wartungsmodus: Wartungsmodus<br/>(Blinken 🟡)
-    AllRed_N2M: Hauptstraße: 🔴<br/>Nebenstraße: 🔴
-    AllRed_M2N: Hauptstraße: 🔴<br/>Nebenstraße: 🔴
+   AllRed_N2M: Hauptstraße - 🔴<br/>Nebenstraße - 🔴
+   AllRed_M2N: Hauptstraße - 🔴<br/>Nebenstraße - 🔴
     
-    Normalbetrieb --> AllRed_N2M: `S2` gedrückt<br/>(Zyklus-Ende)
+   Normalbetrieb --> AllRed_N2M: S2 gedrückt<br/>(Zyklus-Ende)
     AllRed_N2M --> Wartungsmodus: 1200ms
     
-    Wartungsmodus --> AllRed_M2N: `S1` gedrückt
+   Wartungsmodus --> AllRed_M2N: S1 gedrückt
     AllRed_M2N --> Normalbetrieb: 1200ms
 ```
 
