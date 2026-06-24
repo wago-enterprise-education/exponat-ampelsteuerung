@@ -1,13 +1,14 @@
-# Ampelanlage - Normalbetrieb Zustandsautomat
+# Ampelanlage
 
 ## Kurzbeschreibung Exponat
 
 Der vor Dir stehende Aufbau zeigt die Logik einer Ampelsteuerung mit Haupt- und Nebenstraße. Die Ampel ist ausschließlich über definierte Zeitintervalle gesteuert, es gibt keine Sensoren oder andere Eingaben, die den Ablauf beeinflussen können.
-Nach dem Start mit Schalter S1 läuft die Anlage in einem festen Zyklus mit definierten Rot-, Rot-Gelb-, Grün- und Gelbphasen.
+
 Es gibt zwei Modi: Normalbetrieb und Wartungsmodus.
 
 ## Normalbetrieb
 
+Nach dem Start mit Schalter `S1` läuft die Anlage in einem festen Zyklus mit definierten Rot-, Rot-Gelb-, Grün- und Gelbphasen.
 Der folgende Zustandsautomat beschreibt die Logik des Normalbetriebs der Ampelsteuerung:
 
 ```mermaid
@@ -48,11 +49,11 @@ stateDiagram-v2
 
 ## Wartungsmodus
 
-Der Wartungsmodus wird durch das Drücken von Schalter S2 aktiviert. In diesem Modus blinkt die Ampel dauerhaft gelb, um Wartungsarbeiten sicher durchführen zu können.
+Der Wartungsmodus wird durch das Drücken von Schalter `S2` aktiviert. In diesem Modus blinkt die Ampel dauerhaft gelb, um Wartungsarbeiten sicher durchführen zu können.
 
 ```mermaid
 stateDiagram-v2
-    [*] --> Wartungsmodus_GelbAn: S2 gedrückt
+    [*] --> Wartungsmodus_GelbAn: `S2` gedrückt
     
     Wartungsmodus_GelbAn: Hauptstraße: 🟡<br/>Nebenstraße: 🟡
     Wartungsmodus_Aus: Hauptstraße: ⚫<br/>Nebenstraße: ⚫
@@ -80,9 +81,9 @@ stateDiagram-v2
     AllRed_N2M: Hauptstraße: 🔴<br/>Nebenstraße: 🔴
     AllRed_M2N: Hauptstraße: 🔴<br/>Nebenstraße: 🔴
     
-    Normalbetrieb --> AllRed_N2M: S2 gedrückt<br/>(Zyklus-Ende)
+    Normalbetrieb --> AllRed_N2M: `S2` gedrückt<br/>(Zyklus-Ende)
     AllRed_N2M --> Wartungsmodus: 1200ms
     
-    Wartungsmodus --> AllRed_M2N: S1 gedrückt
+    Wartungsmodus --> AllRed_M2N: `S1` gedrückt
     AllRed_M2N --> Normalbetrieb: 1200ms
 ```

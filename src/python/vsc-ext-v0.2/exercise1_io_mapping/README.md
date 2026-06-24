@@ -69,9 +69,9 @@ Das Pinmapping der LEDs auf die DOs und AOs kann mit der IO-Check-Funktion der E
 
 So kannst du herausfinden, welcher Ausgang zu welcher LED gehört.
 
-## CC100IO-Dokumentation
+## Dokumentation
 
-Die Bibliothek und Beispiele findest du hier:
+Die Python Bibliothek CC100IO und Beispiele findest du hier:
 
 <https://github.com/wago-enterprise-education/wago_cc100_python>
 

@@ -2,26 +2,26 @@
 
 ## Ziel
 
-In dieser Aufgabe wird die Ampelsteuerung um einen **Wartungsmodus** erweitert. Das Programm soll zwei Betriebsmodi unterstützen:
+In dieser Aufgabe soll die Ampelsteuerung um einen **Wartungsmodus** erweitert werden. Das Programm soll somit zwei Betriebsmodi unterstützen:
 
-1. **Normalbetrieb** (S1 gedrückt): Vollständiger Ampelzyklus für Haupt- und Nebenstraße
-2. **Wartungsmodus** (S2 gedrückt): Beide gelben LEDs blinken kontinuierlich
+1. **Normalbetrieb**: Vollständiger Ampelzyklus für Haupt- und Nebenstraße
+2. **Wartungsmodus**: Alle gelben LEDs blinken kontinuierlich
 
 ## Was der Code macht
 
 Die Datei [main.py](main.py) implementiert einen Automaten mit zwei Modi:
 
-- Im **Wartungsmodus** blinken beide gelben Lampen (500ms an/aus-Zyklus) — dies signalisiert: Vorsicht, Wartungsarbeiten!
+- Im **Wartungsmodus** blinken alle gelben Lampen (500ms an/aus-Zyklus) — dies signalisiert: Vorsicht, Wartungsarbeiten!
 - Im **Normalbetrieb** läuft die komplette 9-phasige Ampelschaltung (wie in [Aufgabe 1](../exercise1_io_mapping/README.md) beschrieben).
-- **Übergänge** sind sicher: Der aktuelle Zyklus wird zu Ende gebracht, dann folgt eine All-Red-Phase (1200ms) als Handover-Sicherung
+- **Übergänge** sind sicher: Der aktuelle Zyklus wird zu Ende gebracht, dann folgt eine Rot-Phase für alle Ampeln (1200ms) als Sicherung.
 
 ## Zustandsautomat mit Modi
 
-Der Wartungsmodus wird durch das Drücken von Schalter S2 aktiviert. In diesem Modus blinkt die Ampel dauerhaft gelb, um Wartungsarbeiten sicher durchführen zu können.
+Der Wartungsmodus soll durch das Drücken von Schalter `S2` aktiviert werden. In diesem Modus blinkt die Ampel dauerhaft gelb, um Wartungsarbeiten sicher durchführen zu können.
 
 ```mermaid
 stateDiagram-v2
-    [*] --> Wartungsmodus_GelbAn: S2 gedrückt
+    [*] --> Wartungsmodus_GelbAn: `S2` gedrückt
     
     Wartungsmodus_GelbAn: Hauptstraße: 🟡<br/>Nebenstraße: 🟡
     Wartungsmodus_Aus: Hauptstraße: ⚫<br/>Nebenstraße: ⚫
@@ -44,10 +44,10 @@ stateDiagram-v2
     AllRed_N2M: Hauptstraße: 🔴<br/>Nebenstraße: 🔴
     AllRed_M2N: Hauptstraße: 🔴<br/>Nebenstraße: 🔴
     
-    Normalbetrieb --> AllRed_N2M: S2 gedrückt<br/>(Zyklus-Ende)
+    Normalbetrieb --> AllRed_N2M: `S2` gedrückt<br/>(Zyklus-Ende)
     AllRed_N2M --> Wartungsmodus: 1200ms
     
-    Wartungsmodus --> AllRed_M2N: S1 gedrückt
+    Wartungsmodus --> AllRed_M2N: `S1` gedrückt
     AllRed_M2N --> Normalbetrieb: 1200ms
 ```
 
@@ -59,35 +59,29 @@ Vervollständige die Datei [main.py](main.py) an den Stellen, die mit `TODO` mar
    Ergänze die Dauer für die Blinkphasen (an/aus).
 
 2. **Tastereingänge definieren**  
-   Bestimme mit dem **IO-Check-Tool** der Extension, auf welchen DI-Eingängen S1 und S2 angeschlossen sind, und definiere:
+   Bestimme mit dem **IO-Check**-Tool der Extension, auf welchen DI-Eingängen `S1` und `S2` angeschlossen sind, und definiere:
    - `S1_INPUT = x` (Taster für Normalbetrieb)
    - `S2_INPUT = x` (Taster für Wartungsmodus)
 
 3. **`read_requested_mode()` implementieren**  
    Diese Funktion soll:
-   - S2 (Wartungsmodus) mit höherer Priorität abfragen
-   - Falls S2 nicht gedrückt: S1 (Normalbetrieb) abfragen
+   - `S2` (Wartungsmodus) mit höherer Priorität abfragen
+   - Falls `S2` nicht gedrückt: `S1` (Normalbetrieb) abfragen
    - Den gewünschten Modus zurückliefern
 
 ## Hinweise zum IO-Mapping
 
-Das **IO-Check-Tool** hilft beim Ermitteln der korrekten Eingänge:
+Das **IO-Check** hilft beim Ermitteln der korrekten Eingänge:
 
 - Über den Controller in VS Code hovern
-- Auf das **IO-Check-Symbol** klicken
+- Auf das **IO-Check**-Symbolklicken
 - Die Taster drücken und beobachten, welche DI-Eingänge aktiviert werden
 
-## CC100IO-Dokumentation
+## Dokumentation
 
-Die Bibliothek und Beispiele findest du hier:
+Die Python Bibliothek CC100IO und Beispiele findest du hier:
 
 <https://github.com/wago-enterprise-education/wago_cc100_python>
-
-Wichtige Funktionen:
-
-- `CC100IO.digitalRead(pin)` — liest einen digitalen Eingang (0 oder 1)
-- `CC100IO.digitalWrite(pin, state)` — setzt einen digitalen Ausgang
-- `CC100IO.analogWrite(pin, mV)` — setzt einen analogen Ausgang (in Millivolt)
 
 ## Fertig, wenn
 
@@ -95,6 +89,6 @@ Wichtige Funktionen:
 - `S1_INPUT` und `S2_INPUT` sind korrekt zugeordnet
 - `read_requested_mode()` liest beide Schalter und liefert den richtigen Modus
 - Das Programm startet im Wartungsmodus (gelb blinkt)
-- S1 startet den Normalbetrieb
-- S2 wechselt nach dem aktuellen Zyklus in den Wartungsmodus zurück
+- `S1` startet den Normalbetrieb
+- `S2` wechselt nach dem aktuellen Zyklus in den Wartungsmodus zurück
 - Beim Übergangswechsel leuchten alle roten LEDs für 1200ms
